@@ -1,2 +1,2 @@
 # Shop
-Criando APIs Data Driven com ASP.NET Core 3 e EF Core 3
+Criando APIs Data Driven com ASP.NET .Net 5 e EF 5
