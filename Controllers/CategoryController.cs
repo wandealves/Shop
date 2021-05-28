@@ -29,9 +29,16 @@ namespace Shop.Models
       if (!ModelState.IsValid)
         return BadRequest(ModelState);
 
-      context.Categories.Add(model);
-      await context.SaveChangesAsync();
-      return Ok(model);
+      try
+      {
+        context.Categories.Add(model);
+        await context.SaveChangesAsync();
+        return Ok(model);
+      }
+      catch
+      {
+        return BadRequest(new { message = "Não foi possível criar a categoria" });
+      }
     }
 
     [HttpPut]
