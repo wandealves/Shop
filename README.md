@@ -18,3 +18,5 @@ Autentication
 
 dotnet add package Microsoft.AspNetCore.Authentication
 dotnet add package Microsoft.AspNetCore.Authentication.Jwtbearer
+
+Criando APIs Data Driven com ASP.NET .Net 5 e EF 5
