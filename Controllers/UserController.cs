@@ -32,8 +32,12 @@ namespace Shop.Models
 
       try
       {
+        model.Role = "employee";
+
         context.Users.Add(model);
         await context.SaveChangesAsync();
+
+        model.Password = "";
         return Ok(model);
       }
       catch
@@ -82,6 +86,7 @@ namespace Shop.Models
 
       var token = TokenService.GenerateToken(user);
 
+      user.Password = "";
       return new
       {
         user = user,
