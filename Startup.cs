@@ -1,8 +1,10 @@
+using System.Linq;
 using System.Text;
 using Backoffice.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +25,14 @@ namespace Shop
 
     public void ConfigureServices(IServiceCollection services)
     {
+
+      services.AddCors();
+      services.AddResponseCompression(options =>
+      {
+        options.Providers.Add<GzipCompressionProvider>();
+        options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "application/json" });
+      });
+      //services.AddResponseCaching();
 
       services.AddControllers();
 

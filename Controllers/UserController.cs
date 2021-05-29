@@ -10,7 +10,7 @@ using Shop.Services;
 
 namespace Shop.Models
 {
-  [Route("users")]
+  [Route("v1/users")]
   public class UserController : ControllerBase
   {
     [HttpGet]
