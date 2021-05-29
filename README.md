@@ -13,3 +13,8 @@ Migrations
 dotnet ef migrations add [Name]
 
 dotnet ef database update
+
+Autentication
+
+dotnet add package Microsoft.AspNetCore.Authentication
+dotnet add package Microsoft.AspNetCore.Authentication.Jwtbearer

@@ -55,53 +55,5 @@ namespace Shop.Models
         return BadRequest(new { message = "Não foi possível criar a produto" });
       }
     }
-
-    /*[HttpPut]
-    [Route("{id:int}")]
-    public async Task<ActionResult<Category>> Put(int id, [FromBody] Category model, [FromServices] DataContext context)
-    {
-      if (model.Id != id)
-        return NotFound(new { message = "Categoria não encontrada" });
-
-      if (!ModelState.IsValid)
-        return BadRequest(ModelState);
-
-      try
-      {
-        context.Entry<Category>(model).State = EntityState.Modified;
-        await context.SaveChangesAsync();
-        return Ok(model);
-      }
-      catch (DbUpdateConcurrencyException)
-      {
-        return BadRequest(new { message = "Este registro já foi atualizado" });
-      }
-      catch (Exception)
-      {
-        return BadRequest(new { message = "Não foi possível criar a categoria" });
-      }
-    }
-
-    [HttpDelete]
-    [Route("{id:int}")]
-    public async Task<ActionResult<Category>> Delete(int id, [FromServices] DataContext context)
-    {
-      var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
-
-      if (category == null)
-        return NotFound(new { message = "Categoria não encontrada" });
-
-      try
-      {
-        context.Categories.Remove(category);
-        await context.SaveChangesAsync();
-        return Ok(new { message = "Categoria removida com sucesso!" });
-      }
-      catch (Exception)
-      {
-        return BadRequest(new { message = "Não foi possível remover a categoria" });
-      }
-
-    }*/
   }
 }
